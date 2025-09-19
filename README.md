@@ -1,51 +1,55 @@
-📚 LibraNet - Digital Library Management System
+# 📚 LibraNet - Digital Library Management System
 
-LibraNet is a future-ready, object-oriented library management system designed to manage Books, Audiobooks, and E-Magazines. It demonstrates reusable design, extensibility, and strong data handling and error management principles in Java.
+**LibraNet** is a future-ready, object-oriented library management system built in Java to manage **Books**, **Audiobooks**, and **E-Magazines**. Designed with clean code principles and extensibility in mind, this project demonstrates real-world application of OOP, robust error handling, and reusable components.
 
-🚀 Features
+---
 
-📖 Borrow, return, and track availability of items
+## 🚀 Features
 
-💰 Automatically calculate fines for late returns (₹10/day)
+- ✅ **Borrowing and Returning** library items with due date tracking
+- 📌 **Availability** checks for every item
+- 💰 **Fine calculation** for late returns (₹10 per overdue day)
+- 🧩 **Specialized behaviors**:
+  - Books → `getPageCount()`
+  - Audiobooks → implements `Playable` interface
+  - E-Magazines → `archiveIssue()` method
+- ⚙️ **Extensible design** to easily add new item types
+- 🔐 Proper **error handling** (e.g., borrowing already borrowed item, invalid durations)
 
-🧩 Support for specialised behaviours:
+---
 
-Books → getPageCount()
+## 📂 Project Structure
 
-Audiobooks → Playable interface
-
-E-Magazines → archiveIssue() method
-
-📦 Modular OOP design: clean, extensible, and testable
-
-🔐 Proper error handling and validation for borrowing rules
-
-🧠 Easy to extend for future item types like DVDs, Research Papers, etc.
-
-📂 Project Structure
+```
 LibraNet/
-│
-├── LibraryItem.java         # Abstract base class for all items
-├── Book.java                # Book subclass with pageCount
-├── Audiobook.java           # Audiobook subclass, implements Playable
-├── EMagazine.java           # EMagazine subclass with issue number
-├── Playable.java            # Interface for playable media
-└── LibraNetTest.java        # Main test class with sample execution
+├── .gitignore             # Git ignore rules
+├── LibraNet.iml           # IntelliJ project file
+├── Book.java              # Book subclass with page count
+├── Audiobook.java         # Audiobook subclass, implements Playable
+├── EMagazine.java         # E-Magazine subclass with issue number
+├── LibraryItem.java       # Abstract base class for all library items
+├── Playable.java          # Interface for playable media types
+└── LibraNetTest.java      # Main test class with sample usage
+```
+---
 
-🛠️ How to Run
-Prerequisites
+## 🧪 How to Run
 
-Java 8 or higher
+### ✅ Requirements
 
-A Java IDE (like IntelliJ IDEA or Eclipse) or command line setup
+- Java 8 or higher
+- Any Java IDE (IntelliJ, Eclipse) or terminal
 
-Compile and Run
+### ▶️ Run via Terminal
+
 javac *.java
 java LibraNetTest
 
-🧪 Sample Output
+
 📖 Book: Atomic Habits by James Clear | Pages: 320 | Available: true
+
 🎧 Audiobook: Deep Work by Cal Newport | Duration: 180 mins | Available: true
+
 📰 E-Magazine: NatGeo | Issue: #2025 | Available: true
 
 Atomic Habits borrowed for 7 days.
@@ -54,37 +58,45 @@ NatGeo borrowed for 10 days.
 
 Pages in book: 320
 🔊 Playing audiobook: Deep Work [180 mins]
+
 🗂️ Archiving issue #2025 of NatGeo
 
 Item returned on time. No fine.
+
 Fine for book: ₹0
 
-⚙️ Design Principles Followed
+🧠 Design Principles Used
 
-✅ Abstraction & Inheritance
-✅ Polymorphism for displayInfo()
-✅ Interface-based Design via Playable
-✅ Error Handling using exceptions
-✅ Single Responsibility Principle
-✅ Open/Closed Principle — easy to extend without modifying base code
+Abstraction & Inheritance → LibraryItem abstract class
 
-💡 Future Enhancements
+Polymorphism → Common methods like displayInfo()
 
-User profiles and login
+Interface-Based Design → Playable for media
 
-Search and filter by title, author, or type
+Encapsulation → Private fields with protected/public accessors
 
-GUI or Web interface (JavaFX / Spring Boot)
+Open/Closed Principle → System is open for extension, closed for modification
 
-Borrowing history and statistics
+Exception Handling → Runtime checks and validation logic
 
-Integration with databases
+🛠️ Potential Extensions
+
+👤 User accounts and borrowing history
+
+🔍 Search functionality by author, title, or type
+
+🖥️ GUI using JavaFX or Swing
+
+🌐 Web version using Spring Boot + MySQL
+
+📊 Reports for most borrowed items, fines collected, etc.
 
 👨‍💻 Author
 
 Devansh Singh
-KIIT University (CSE 2022–present)
+🎓 B.Tech CSE | KIIT University
+📫 Email: 2205030@kiit.ac.in
 
 📜 License
 
-This project is for academic and educational use. No license attached.
+This project is for academic and educational use only.
